@@ -7,14 +7,18 @@
         function goto() {
             window.location.href = document.getElementById("textin").value;
         };
-        function infos() {
+        function infos(brw) {
+            if (brw="chrome") {
             window.location.href = "chrome://version"
-            window.location.href = "chrome://about"
+            }
+            if (brw="opera") {
             window.location.href = "opera://about"
+        }
         }
     </script>
     <input type="text" id="textin" name="name" required
     minlength="1" maxlength="121122" size="10">
     <input type="button" value="goUrl" onclick="goto()"/>
-    <input type="button" value="infobrowser" onclick="infos()"/>
+    <input type="button" value="infochrome" onclick="infos('chrome')">
+    <input type="button" value="infoopera" onclick="infos('opera')">
 </body>
